@@ -1,0 +1,25 @@
+﻿@using SchoolProject.Entities
+@model List<tOgrenci>
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<div class="jumbotron text-center">
+    <h2>Yeni Öğrenci Ekleme Ekranı</h2>
+</div>
+<form class="form-group" method="post">
+    <input type="text" placeholder="öğrenci no" name="OgrenciID" class="form-control" />
+    <br />
+    <input type="text" placeholder="öğrenci adı" name="OgrenciAd" class="form-control" />
+    <br />
+    <input type="text" placeholder="öğrenci soyadı" name="OgrenciSoyad" class="form-control" />
+    <br />
+    <input type="text" placeholder="öğrenci bölümü" name="BolumID" class="form-control" />
+    <br />
+
+    <button class="btn btn-primary">Ekle</button>
+</form>
+
+
+

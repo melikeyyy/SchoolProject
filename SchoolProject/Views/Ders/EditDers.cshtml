@@ -1,0 +1,26 @@
+﻿@model SchoolProject.Entities.tDers
+@{
+    ViewBag.Title = "EditDers";
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<div class="jumbotron text-center">
+    <h2>DERS GÜNCELLEME EKRANI</h2>
+</div>
+<br />
+<h2>Ders Güncelleme Ekranı</h2>
+
+@using (Html.BeginForm("EditDers", "Ders", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Ders ID")
+        @Html.TextBoxFor(x => x.DersID, new { @class = "form-control" })
+        <br />
+        @Html.Label("Ders Adı")
+        @Html.TextBoxFor(x => x.DersAd, new { @class = "form-control" })
+        <br />
+        
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}
+

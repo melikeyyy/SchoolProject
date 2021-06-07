@@ -1,0 +1,33 @@
+﻿@using SchoolProject.Entities
+@model List<tDers>
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<div>
+    <div class="jumbotron text-center">
+        <h2>DERS İŞLEMLERİ</h2>
+
+    </div>
+    <a href="@Url.Action("Index", "Home")" class="btn btn-info">Ana Sayfa</a>
+</div>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Ders ID</th>
+        <th>Ders Ad</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.DersID</td>
+    <td>@item.DersAd</td>
+    <td><a href="/Ders/DeleteDers/@item.DersID" class="btn btn-danger">Sil</a></td>
+    <td><a href="/Ders/EditDers/@item.DersID" class="btn btn-warning">Güncelle</a></td>
+</tr>
+    }
+</table>
+<a href="@Url.Action("AddDers", "Ders")" class="btn btn-info">DERS EKLE</a>
+<br />

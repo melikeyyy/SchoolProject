@@ -1,0 +1,28 @@
+﻿@model SchoolProject.Entities.tBolum
+@{
+    ViewBag.Title = "EditBolum";
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+<div class="jumbotron text-center">
+    <h2>BÖLÜM GÜNCELLEME EKRANI</h2>
+</div>
+
+@using (Html.BeginForm("EditBolum", "Bolum", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Bolum ID")
+        @Html.TextBoxFor(x => x.BolumID, new { @class = "form-control" })
+        <br />
+        @Html.Label("Bölüm Adı")
+        @Html.TextBoxFor(x => x.BolumAd, new { @class = "form-control" })
+        <br />
+        @Html.Label("Fakülte ID")
+        @Html.TextBoxFor(x => x.FakulteID, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}
+

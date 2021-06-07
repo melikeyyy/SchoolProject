@@ -1,0 +1,26 @@
+﻿@model SchoolProject.Entities.tFakulte
+@{
+    ViewBag.Title = "EditFakulte";
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+<div class="jumbotron text-center">
+    <h2>FAKÜLTE GÜNCELLEME EKRANI</h2>
+</div>
+
+@using (Html.BeginForm("EditFakulte", "Fakulte", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Fakulte ID")
+        @Html.TextBoxFor(x => x.FakulteID, new { @class = "form-control" })
+        <br />
+        @Html.Label("Fakulte Adı")
+        @Html.TextBoxFor(x => x.FakulteAd, new { @class = "form-control" })
+        <br />
+     
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}
+

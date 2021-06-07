@@ -1,0 +1,36 @@
+﻿@using SchoolProject.Entities
+@model List<tBolum>
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<div>
+    <div class="jumbotron text-center">
+        <h2>BÖLÜM İŞLEMLERİ</h2>
+    </div>
+    <a href="@Url.Action("Index", "Home")" class="btn btn-info">Ana Sayfa</a>
+</div>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Bölüm ID</th>
+        <th>Bölüm Ad</th>
+        <th>Fakülte AD</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.BolumID</td>
+    <td>@item.BolumAd</td>
+    <td>@item.TFakulte.FakulteAd</td>
+    <td><a href="/Bolum/DeleteBolum/@item.BolumID" class="btn btn-danger">Sil</a></td>
+    <td><a href="/Bolum/EditBolum/@item.BolumID" class="btn btn-warning">Güncelle</a></td>
+
+</tr>
+    }
+</table>
+
+<a href="@Url.Action("AddBolum", "Bolum")" class="btn btn-info">BÖLÜM EKLE</a>
+<br />

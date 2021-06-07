@@ -1,0 +1,19 @@
+﻿@using SchoolProject.Entities
+@model List<tBolum>
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<h1>Yeni Bölüm Ekleme Ekranı</h1>
+<form class="form-group" method="post">
+    <input type="text" placeholder="bölüm adı" name="BolumAd" class="form-control" />
+    <br />
+    <input type="text" placeholder="Fakülte ID" name="FakulteID" class="form-control" />
+    <br />
+   
+    <button class="btn btn-primary">Ekle</button>
+</form>
+
+
+

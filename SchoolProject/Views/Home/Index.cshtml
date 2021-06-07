@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<br />
+<div class="jumbotron text-center" >
+    <h2>ÜNİVERSİTE SİSTEMİ</h2>
+</div>
+    <br />
+    <div class="container">
+
+        <div class="btn-group">
+
+            <div class="btn-group-vertical">
+                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                    ÖĞRENCİ İŞLEMLERİ <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="@Url.Action("GetOgrenci", "Ogrenci")">Öğrenci Listeleme ve Diğer İşlemler</a></li>
+                    <li><a href="@Url.Action("GetOgrenciDers", "OgrenciDers")">Öğrenci Ders Seçme Ekranı</a></li>
+                </ul>
+                <br />
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="btn-group btn-group-vertical">
+
+            <a href="@Url.Action("GetBolum", "Bolum")" class="btn btn-danger">BÖLÜM İŞLEMLERİ</a>
+            <br />
+            <a href="@Url.Action("GetDers", "Ders")" class="btn btn-success">DERS İŞLEMLERİ</a>
+            <br />
+            <a href="@Url.Action("GetFakulte", "Fakulte")" class="btn btn-danger">FAKÜLTE İŞLEMLERİ</a>
+            <br />
+
+            <button class="btn btn-success">ÖĞRENCİ SORGULAMA</button>
+            <br />
+            <button class="btn btn-info">ÖĞRENCİ İŞLEMLERİ(WEB SERVİSİ İLE)</button>
+
+        </div>
+    </div>
+

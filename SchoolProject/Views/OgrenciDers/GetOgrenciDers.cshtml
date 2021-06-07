@@ -1,0 +1,65 @@
+﻿@using SchoolProject.Entities
+@model List<tOgrenciDers>
+
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div>
+        <div class="jumbotron text-center">
+            <h2>Ders Seçme ve Düzenleme </h2>
+        </div>
+        <a href="@Url.Action("Index", "Home")" class="btn btn-info">Ana Sayfa</a>
+        <br /><br />
+        <div class="btn-group-justified">
+            <a href="@Url.Action("AddOgrenciDers", "OgrenciDers")" class="btn btn-primary">Ders Ekleme İşlemi</a>
+        </div>
+
+
+
+        <br />
+        <table class="table table-bordered">
+            <tr>
+                <th>Öğrenci NO</th>
+                <th>Öğrenci Ad</th>
+                <th>Öğrenci Soyad</th>
+                <th>Öğrenci Bölüm</th>
+                <th>Öğrencinin Aldığı Dersler</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.OgrenciID</td>
+                    <td>@item.TOgrenci.OgrenciAd</td>
+                    <td>@item.TOgrenci.OgrenciSoyad</td>
+                    <td>@item.TOgrenci.TBolum.BolumAd</td>
+                    <td>@item.TDers.DersAd</td>
+
+                    <td><a href="/OgrenciDers/DeleteOgrenciDers/@item.OgrenciID" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/OgrenciDers/EditOgrenciDers/@item.OgrenciID" class="btn btn-warning">Güncelle</a></td>
+                </tr>
+            }
+
+        </table>
+
+        <br />
+    </div>
+
+</body>
+</html>
+

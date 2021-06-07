@@ -1,0 +1,26 @@
+﻿@model SchoolProject.Entities.tOgrenciDers
+@{
+    ViewBag.Title = "EditOgrenciDers";
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+<h2>Ders Güncelleme Ekranı</h2>
+
+@using (Html.BeginForm("EditOgrenciDers", "OgrenciDers", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Öğrenci No")
+    @Html.TextBoxFor(x => x.OgrenciID, new { @class = "form-control" })
+    <br />
+  
+    @Html.Label("Güncellenecek Ders Adı")
+    @Html.TextBoxFor(x => x.DersID, new { @class = "form-control" })
+    <br />
+
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</div>
+}
+

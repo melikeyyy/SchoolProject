@@ -1,0 +1,42 @@
+﻿@using SchoolProject.Entities
+@model List<tOgrenci>
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<br />
+<br />
+<div>
+    <div class="jumbotron text-center">
+        <h2>Öğrenci Listesi</h2>
+    </div>
+    <a href="@Url.Action("Index", "Home")" class="btn btn-info">Ana Sayfa</a>
+</div>
+<br />
+<a href="@Url.Action("AddOgrenci", "Ogrenci")" class="btn btn-info">ÖĞRENCİ EKLE</a>
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Öğrenci No</th>
+        <th>Öğrenci Ad</th>
+        <th>Öğrenci Soyad</th>
+        <th>Öğrenci Bölüm</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.OgrenciID</td>
+            <td>@item.OgrenciAd</td>
+            <td>@item.OgrenciSoyad</td>
+            <td>@item.TBolum.BolumAd</td>
+            <td><a href="/Ogrenci/DeleteOgrenci/@item.OgrenciID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Ogrenci/EditOgrenci/@item.OgrenciID" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<br />
